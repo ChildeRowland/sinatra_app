@@ -1,11 +1,14 @@
 require 'sinatra'
+require 'sinatra/reloader'
+
+
+number ||= rand(1..100)
 
 get '/' do
-	"Hello, World!"
-	x = random_number
-	puts x
+	"The secret number is #{number}"
+	# erb :index, :locals => {number: number}
 end
 
-def random_number
-	rand(1..100)
-end
+# def number
+# 	rand(1..100)
+# end
